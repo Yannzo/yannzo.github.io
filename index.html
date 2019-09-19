@@ -25,6 +25,8 @@
             'onStateChange': onPlayerStateChange
           }
         });
+        var ytAnalytics = new window.analyticsPlugins.YT(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
+        ytAnalytics.initialize()
       }
 
       // 4. The API will call this function when the video player is ready.
