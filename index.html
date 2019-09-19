@@ -3,7 +3,7 @@
 <head>
     <title>Home Questionnaire<span id="selection-marker-1" class="redactor-selection-marker"></span></title>
 
-    <div id="target-container"></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
     
@@ -39,7 +39,20 @@
  }); */
 
 
-
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: 'M7lc1UVf-VE',
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+    var ytAnalytics = new window.analyticsPlugins.YT(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
+    ytAnalytics.initialize()
+}         
     
 </script>
 
@@ -49,7 +62,6 @@
 </head>
 <body>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 <amp-analytics type="segment">
@@ -107,22 +119,7 @@
             window.location.href = "";
         });
       }
-
-        
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE',
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-    var ytAnalytics = new window.analyticsPlugins.YT(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
-    ytAnalytics.initialize()
-}         
+     
         
 </script>
   
