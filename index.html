@@ -111,7 +111,7 @@
         
  var player;
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
+  player = new YouTubeAnalytics.Player('player', {
     height: '390',
     width: '640',
     videoId: 'M7lc1UVf-VE',
@@ -120,7 +120,7 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
-    var ytAnalytics = new window.analyticsPlugins.YT(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
+    var ytAnalytics = new window.analyticsPlugins.YouTubeAnalytics(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
     ytAnalytics.initialize()
 }         
         
