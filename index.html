@@ -16,17 +16,7 @@
   }}();    
     
     
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE'
-    });
-    var ytAnalytics = new window.analytics.plugins.YoutubeAnalytics(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
-    ytAnalytics.initialize()
-}    
-    
+
     
 </script>
 
@@ -90,7 +80,17 @@ function onYouTubeIframeAPIReady() {
         });
       }      
     
-
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: 'M7lc1UVf-VE'
+    });
+    var ytAnalytics = new window.analytics.plugins.YoutubeAnalytics(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
+    ytAnalytics.initialize()
+}    
+    
         
 </script>
 
