@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>Hello World</h1>
-    <amp-analytics>
+    <amp-analytics type="segment">
       <script type="application/json">
       {
         "transport": {
@@ -36,7 +36,9 @@
         "vars": {
           "trackingServer": "metrics.example.com",
           "accounts": "reportSuiteID",
-          "pageName": "Adobe Analytics Using amp-analytics tag"
+          "pageName": "Adobe Analytics Using amp-analytics tag",
+          "writeKey": "xge2WxsbVFusSknjxsgsmBdTir014O2W",
+          "name": "My Page Name"
         },
         "triggers": {
           "pageLoad": {
@@ -55,17 +57,6 @@
       }
       </script>
     </amp-analytics> 
-    
-    <amp-analytics type="segment">
-<script type="application/json">
-  {
-    "vars": {
-      "writeKey": "xge2WxsbVFusSknjxsgsmBdTir014O2W",
-      "name": "My Page Name"
-    }
-  }
-</script>
-</amp-analytics>
     
   </body>
 </html>
