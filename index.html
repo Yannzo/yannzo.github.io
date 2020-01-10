@@ -34,16 +34,22 @@
   {
     "vars": {
       "writeKey": "xge2WxsbVFusSknjxsgsmBdTir014O2W",
-      "name": "test page name6",
-      "integrations": {
-          "Adobe Analytics": "false"
-     }
+      "name": "test page name7"
     },
     "extraUrlParams": {
       "properties.utm_source": "google",
       "properties.utm_campaign": "2016-06-28",
       "properties.utm_medium": "email"
+    },
+    "triggers": {
+    "default pageview": {
+      "on": "visible",
+      "request": "pageview",
+      "vars": {
+        "title": "Name of the Article"
+      }
     }
+  }
   }
 
 </script>
