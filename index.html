@@ -1,62 +1,106 @@
-<!doctype html>
-<html ⚡ lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <!-- Import other AMP Extensions here -->
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <style amp-custom>
-    /* Add your styles here */
-    </style>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
- 
-    <link rel="canonical" href=".">
-    <title>My AMP Page</title>
-    
-     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    
-  </head>
-  <body>
-    <h1>Hello World</h1>
-    <amp-analytics type="segment">
-      <script type="application/json">
-      {
-        "transport": {
-          "xhrpost": false,
-          "beacon": true
-        },
-        "requests": {
-          "base": "https://${trackingServer}/b/ss/${accounts}/1/AMP-0.1/s${random}",
-          "pageView": "${base}?AQB=1&vid=CLIENT_ID(adobe_amp_id)&pageName=${pageName}&j=amp&AQE=1",
-          "buttonClick": "${base}?AQB=1&vid=CLIENT_ID(adobe_amp_id)&pageName=${pageName}&j=amp&pe=lnk_o&v1=${eVar1}&AQE=1"
-        },
-        "vars": {
-          "trackingServer": "metrics.example.com",
-          "accounts": "reportSuiteID",
-          "pageName": "Adobe Analytics Using amp-analytics tag",
-          "writeKey": "xge2WxsbVFusSknjxsgsmBdTir014O2W",
-          "name": "My Page Name"
-        },
-        "triggers": {
-          "pageLoad": {
-            "on": "visible",
-            "request": "pageView"
-          },
-          "click": {
-            "on": "click",
-            "selector": "button",
-            "request": "buttonClick",
-            "vars": {
-              "eVar1": "button clicked"
-            }
-          }
-        }
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Home Questionnaire<span id="selection-marker-1" class="redactor-selection-marker"></span></title>
+
+ <div id="target-container"></div>
+
+   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+   <script>
+
+  //standard segment snippet
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+  //analytics.load("Jh0VIwuU2f2kNGWROwpzmn0o1nAgn2Cf");
+  analytics.page("Home");
+  }}();
+
+</script>
+
+</head>
+<body>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<amp-analytics type="segment">
+<script type="application/json">
+  {
+    "vars": {
+      "writeKey": "xge2WxsbVFusSknjxsgsmBdTir014O2W",
+      "name": "My Page Name"
+    }
+  }
+</script>
+</amp-analytics>
+
+
+<h1>What is your favorite place to travel?</h1>
+<p>I am building a directory of the sweetest travel destinations.</p>
+<form name="travel" onsubmit="identify(event)">
+     What is your favorite travel destination?
+    <input name="destination" required="" size="81" type="text"/>
+    <br><br><br>
+    Any recommendations (cool things to do, places to visit or restaurants to eat)?
+    <br><br>
+    <textarea cols="81" name="details" required="" rows="10">
+    </textarea>
+    <br><br>
+    Name: <input name="fullname" required="" size="75" type="text"/>
+    <br><br>
+    Email: <input name="email" required="" size="75" type="email"/>
+    <br><br>
+    <input name="submit" type="submit" value="submit"/>
+</form>
+    <script type="text/javascript">
+      function identify(e){
+        e.preventDefault();
+        var form = e.target;
+        var email = form["email"].value;
+        var fullname = form["fullname"].value;
+        var destination = form["destination"].value;
+        var details = form["details"].value;
+        var user = {
+            email: email,
+            name: fullname,
+            destination: destination,
+            details: details
+        };
+        analytics.identify('1234', {
+            email: email,
+            name: fullname
+        });
+        analytics.track('destination submitted', user, function() {
+            window.location.href = "";
+        });
       }
-      </script>
-    </amp-analytics> 
-    
-  </body>
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: 'M7lc1UVf-VE'
+    });
+    var ytAnalytics = new window.analytics.plugins.YoutubeAnalytics(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
+    ytAnalytics.initialize()
+}
+
+
+</script>
+
+<script
+  src="https://unpkg.com/@segment/consent-manager@1.2.0/standalone/consent-manager.js"
+  data-container="#target-container"
+  data-writeKey="Jh0VIwuU2f2kNGWROwpzmn0o1nAgn2Cf"
+  data-bannerContent="We use cookies (and other similar technologies) to collect data to improve your experience on our site."
+  data-bannerSubContent="You can change your preferences at any time."
+  data-preferencesDialogTitle="Website Data Collection Preferences"
+  data-preferencesDialogContent="We use data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site."
+  data-cancelDialogTitle="Are you sure you want to cancel?"
+  data-cancelDialogContent="Your preferences have not been saved. By continuing to use our website, you՚re agreeing to our Website Data Collection Policy."
+></script>
+
+
+</body>
 </html>
