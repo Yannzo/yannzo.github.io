@@ -5,10 +5,7 @@
 <title>Home Questionnaire<span id="selection-marker-1" class="redactor-selection-marker"></span></title>
 
  <div id="target-container"></div>
-
-   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-
-   <script>
+ <script>
 
   //standard segment snippet
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
@@ -22,18 +19,6 @@
 <body>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<amp-analytics type="segment">
-<script type="application/json">
-  {
-    "vars": {
-      "writeKey": "xge2WxsbVFusSknjxsgsmBdTir014O2W",
-      "name": "My Page Name"
-    }
-  }
-</script>
-</amp-analytics>
-
 
 <h1>What is your favorite place to travel?</h1>
 <p>I am building a directory of the sweetest travel destinations.</p>
@@ -74,33 +59,6 @@
             window.location.href = "";
         });
       }
-
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE'
-    });
-    var ytAnalytics = new window.analytics.plugins.YoutubeAnalytics(player, 'AIzaSyAtu4Bn876W_bcHyDdh-WNunF1v1KVrxA4')
-    ytAnalytics.initialize()
-}
-
-
 </script>
-
-<script
-  src="https://unpkg.com/@segment/consent-manager@1.2.0/standalone/consent-manager.js"
-  data-container="#target-container"
-  data-writeKey="Jh0VIwuU2f2kNGWROwpzmn0o1nAgn2Cf"
-  data-bannerContent="We use cookies (and other similar technologies) to collect data to improve your experience on our site."
-  data-bannerSubContent="You can change your preferences at any time."
-  data-preferencesDialogTitle="Website Data Collection Preferences"
-  data-preferencesDialogContent="We use data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site."
-  data-cancelDialogTitle="Are you sure you want to cancel?"
-  data-cancelDialogContent="Your preferences have not been saved. By continuing to use our website, you՚re agreeing to our Website Data Collection Policy."
-></script>
-
-
 </body>
 </html>
