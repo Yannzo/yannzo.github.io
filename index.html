@@ -98,14 +98,14 @@
         });
           
         //analytics.track(event, [properties], [options], [callback]);
-        analytics.track(
-                'Destination Submitted',
-                {label: 'client side',
-                user
-                // { context: { ip: "0.0.0.0" }}, //with this we would override the value for ip in context
-                //function() { window.location.href = "";}
-                });
-          
+        analytics.track('Form Submitted', { 
+            label: 'client side',
+            user,
+            form_name: 'Nice Destinations'
+                            
+            // { context: { ip: "0.0.0.0" }}, //with this we would override the value for ip in context               
+            //function() { window.location.href = "";}
+            });         
         //analytics.alias('999999');
       }
     </script>
