@@ -18,12 +18,15 @@
             window.braze.getDeviceId(function(deviceId) {
               // Pass the braze_id to Segment's anonymous profile
               analytics.identify(null, {}, {
-                integrations: {
-                  "Braze": {
-                    "braze_id": deviceId
-                  }
-                }
-              });
+                  integrations: {
+                    "Braze": {
+                        "braze_id": deviceId
+                    },
+                    "Appboy": {
+                        "braze_id": deviceId
+                    }
+                    }
+                });
             });
           }
         });
