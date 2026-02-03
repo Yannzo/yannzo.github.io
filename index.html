@@ -12,6 +12,26 @@
   }}();
 </script>
 
+<script>
+    // Ensure the analytics object exists
+    analytics.ready(function() {
+      // Use the Braze SDK to get the ID and pass it back to Segment
+      // Note: Braze is loaded via Segment's Destination, so we wait for it
+      if (window.braze) {
+        window.braze.getDeviceId(function(deviceId) {
+          analytics.identify({
+            integrations: {
+              "Braze": {
+                "braze_id": deviceId
+              }
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+    
 </head> 
 <body>
 
